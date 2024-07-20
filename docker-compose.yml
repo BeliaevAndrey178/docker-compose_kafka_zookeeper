@@ -6,7 +6,7 @@ networks:
 services:
   zookeeper:
     container_name: zookeeper
-    image: sberworks.ru/sbt/ci90000305_pvwoss/zookeeper/zookeeper:7.1.0
+    image: path-to-image/zookeeper/zookeeper:7.1.0
     environment:
       ZOOKEEPER_CLIENT_PORT: 2181
       ZOOKEEPER_TICK_TIME: 2000
@@ -16,7 +16,7 @@ services:
       - "${SCA_FOSE_NETWORK:-sca_fose_network}"
   kafka:
     container_name: kafka
-    image: sberworks.ru/sbt/ci90000305_pvwoss/kafka/kafka:7.1.0
+    image: path-to-image/kafka/kafka:7.1.0
     depends_on:
       - zookeeper
     ports:
